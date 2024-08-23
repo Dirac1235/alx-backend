@@ -59,8 +59,8 @@ class Server:
         """
         data = self.get_page(page, page_size)
         totalRows = len(self.dataset())
-        next_page = page + 1
         prev_page = page - 1 if page > 1 else None
+        next_page = page + 1
         if self.index_range(page, page_size)[1] >= totalRows:
             next_page = None
         total_pages = totalRows / page_size
